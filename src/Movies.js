@@ -83,14 +83,11 @@ const Movies = ({mode}) => {
 
            
           </Typography>
-          <Typography className='card' component="div" sx={{ fontFamily: 'Poppins'}}>
+          <Typography className='card' variant ="subtitle1" component="div" sx={{ fontFamily: 'Poppins',fontSize:"12px"}}>
            
            Year: {m.Year}
           </Typography>
-          <Typography className='card' component="div" sx={{ fontFamily: 'Poppins'}}>
-           
-          Released: {m.Released}
-          </Typography>
+          
           
           </CardContent>
          
