@@ -8,7 +8,7 @@ import { UseGlobalContext } from './context';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 
 const Home = () => {
- const [Mode,setMode] = useState(false)
+  const {Mode,setMode} = UseGlobalContext();
 
  const handleClick = (e)=>{
     if(Mode === false){
@@ -28,7 +28,8 @@ const Home = () => {
       color:"black",
     }
    }>
-    <DarkModeIcon sx={{backgroundColor:"#3d0c02",color:"white",borderRadius:"2px",margin:"4px"}}/> darkmode
+    <DarkModeIcon sx={{backgroundColor:"#3d0c02",color:"white",borderRadius:"2px",margin:"4px"}}/> 
+    {Mode?"lightmode":"darkmode"}
     </Button>
     </div>
 
@@ -39,8 +40,8 @@ const Home = () => {
     {textAlign:"center",
     display:"block"}
    }
- //  className={Mode?"black":"white"}
-  // style={Mode?{color:"white"}:{color:"black"}}
+  // className={Mode?"black":"white#"}
+   
    
    
    

@@ -10,6 +10,7 @@ const arrayMovies = ["love","mission impossible","fast and furious", "naruto","k
 
 
 const AppProvider = ({children}) => {
+  const [Mode,setMode] = useState(false)
       const [isloading,setloading] = useState(true);
       const [movie, setMovie] = useState([]);
       const [error,setError] = useState({show:null, msg:""});
@@ -30,7 +31,7 @@ const AppProvider = ({children}) => {
   
    const data = await fetch(url);
   const  parsedData = await data.json();
-  console.log(parsedData);
+  
 
 
   if(parsedData.Response === "True"){
@@ -64,7 +65,7 @@ return () => clearTimeout(TimerOut);
  
  
   return (
-  <AppContext.Provider value={{isloading,movie,error,HandleChange,search,setSearch}}>
+  <AppContext.Provider value={{isloading,movie,error,HandleChange,search,setSearch,Mode,setMode}}>
     {children}
   </AppContext.Provider>
   )

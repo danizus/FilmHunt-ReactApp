@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 
@@ -18,7 +17,7 @@ import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 
 const Movies = ({mode}) => {
   const {movie,isloading} = UseGlobalContext();
- console.log(movie)
+
 
 
  if(isloading){
@@ -43,7 +42,7 @@ const Movies = ({mode}) => {
       } }
     
     >
-    <Grid container  spacing={4} sx={{position:"relative",padding:"40px",width:"80%"}} >
+    <Grid container   spacing={4} sx={{position:"relative",padding:"40px",width:"80%"}} >
       {movie.map((m)=>{
 
         let movieName = m.Title.substring(0,20)
@@ -59,7 +58,7 @@ const Movies = ({mode}) => {
        < >
        
        
-       <Grid item   xs={12} sm={12} md={6}  lg={4}  width={100}  key={m.imdbID}>
+       <Grid item  xs={12} sm={12} md={6}  lg={4}  width={100} key={m.imdbID} >
        <NavLink  to={`movie/${m.imdbID}`} style={{textDecoration:"none"}}
        >
       <Card className="card"  sx={{display:"flex",justifyContent:"space-between",p:"10px"}} >

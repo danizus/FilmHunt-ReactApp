@@ -18,7 +18,7 @@ const Search = () => {
    <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
     
      <InputBase
-     autofocus
+     autoFocus
   placeholder="Search your favourite movie"
   inputProps={{ 'aria-label': 'search' }}
   endAdornment={<SearchIcon/>}

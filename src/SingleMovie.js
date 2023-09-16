@@ -1,5 +1,6 @@
-import React from 'react'
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { UseGlobalContext } from './context';
+import { NavLink, useParams } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import { Box ,Typography,Button} from '@mui/material';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
@@ -7,16 +8,20 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import image from "./Magnify-1s-200px.gif"
 
 
 const SingleMovie = () => {
 const {id} = useParams();
+const {Mode} = UseGlobalContext();
 const [isloading,setloading] = useState(true);
 const [movie, setMovie] = useState("");
 const API_URL=`https://omdbapi.com/?i=${id}&apikey=3752530f`
 
 
+const handleBack= ()=>{
 
+}
 
 
 const getMovies = async (url)=>{
@@ -26,7 +31,7 @@ try{
 
 const data = await fetch(url);
 const  parsedData = await data.json();
-console.log(parsedData);
+
 
 
 if(parsedData.Response === "True"){
@@ -46,7 +51,7 @@ console.log(error);
 
 useEffect (()=>{
 var TimerOut = setTimeout(()=>{
-console.log(`${API_URL}`)
+
 getMovies(`${API_URL}`);
 },650)
 
@@ -60,18 +65,18 @@ if(isloading){
     
     <>
     <div>
-    <div><Button sx={
+    <NavLink to='/' ><Button style={Mode?{backgroundColor:"black",color:"white"}:{backgroundColor:"#fdf5e6"}} sx={
       {
-        backgroundColor:"#fdf5e6",
+        
         color:"black"
       }
-    }>{<ArrowBackIcon/> }back</Button></div>
+    } onClick={handleBack}>{<ArrowBackIcon/> }back</Button></NavLink>
 
-<div style={{height:"90vh" ,margin:"4px",display:"flex" , justifyContent:"center",alignItems:"center",backgroundColor:"#fdf5e6"}}>
-   <Box sx={{width:"60vw",display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",padding:"4px"}}>
-   <Typography sx={{textAlign:"center",mt:"20px"}} variant='h6'>LOADING ...</Typography>
+<div className={Mode?"black":"white"} style={{height:"90vh" ,margin:"4px",display:"flex" , justifyContent:"center",alignItems:"center"}}>
+   
+   <img src={image} alt="" />
     
-    </Box></div>
+    </div>
 
     </div>
     
@@ -82,15 +87,15 @@ if(isloading){
 
   return (
    <>
-  <div><Button sx={
+  <NavLink  to='/'  ><Button style={Mode?{backgroundColor:"black",color:"white"}:{backgroundColor:"#fdf5e6"}}  sx={
       {
-        backgroundColor:"#fdf5e6",
+       
         color:"black"
       }
-    }>{<ArrowBackIcon/> }back</Button></div>
+    }>{<ArrowBackIcon/> }back</Button></NavLink>
 
-   <div style={{height:"100vh" ,margin:"4px",display:"flex" , justifyContent:"center",alignItems:"center",backgroundColor:"#fdf5e6"}}>
-   <Box sm={12} sx={{width:"80vw",display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",padding:"4px"}}>
+   <div   className={Mode?"black":"white"}  style={{height:"100vh" ,margin:"4px",display:"flex" , justifyContent:"center",alignItems:"center"}}>
+   <Box  className={Mode?"black":"white"}  sm={12} sx={{width:"80vw",display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",padding:"4px"}}>
    <Card  sx={{display:"flex",justifyContent:"space-between",padding:"4px"}} >
       <Box sx={{justifyContent:"space-between"}}>
       
@@ -107,7 +112,7 @@ if(isloading){
          
          
           <Typography    component="div" sx={{ fontFamily: 'Poppins'}}>
-           TYPE: {movie.Type}
+           Type: {movie.Type}
          
           </Typography>
           <br/>
@@ -138,8 +143,8 @@ if(isloading){
           Released: {movie.Released}
           </Typography>
           <br />
-          <Typography class="mobile" variant='subtitle2'  component="div" sx={{ fontFamily: 'Poppins'}}>
-          <b >plot</b>: {movie.Plot}
+          <Typography className="mobile" variant='subtitle2'  component="div" sx={{ fontFamily: 'Poppins'}}>
+          <b >Plot</b>: {movie.Plot}
           </Typography>
           <br />
           
