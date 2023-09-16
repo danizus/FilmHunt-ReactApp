@@ -8,11 +8,15 @@
 
 }
 
+
+
 .black{
   background-color: #080808;
+  color: white;
 }
 .white{
   background-color: #fdf5e6;
+  color: black;
 }
 
 body {
@@ -26,8 +30,3 @@ code {
 }
 
 
-@media screen and (max-width: 1000px) {
-  .mobile {
-    display: none;
-  }
-}

@@ -6,22 +6,24 @@ import ErrorIcon from '@mui/icons-material/Error';
 
 
 
+
 const Search = () => {
-  const {HandleChange,error } = UseGlobalContext();
+  const {HandleChange,error,Mode } = UseGlobalContext();
 
 
   return (
    <>
    
-  <section>
+  <section >
 
-   <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+   <div  style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
     
      <InputBase
+    
      autoFocus
   placeholder="Search your favourite movie"
   inputProps={{ 'aria-label': 'search' }}
-  endAdornment={<SearchIcon/>}
+  endAdornment={<SearchIcon />}
   sx={{m:"20px",border:"2px solid black",borderRadius:"10px",width:"50%"}} onSubmit={(e)=>{
     e.preventDefault()
   }}

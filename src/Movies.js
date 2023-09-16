@@ -96,7 +96,7 @@ const Movies = ({mode}) => {
           
           <CardMedia
         component="img"
-        sx={{ width: 151 }}
+        sx={{ width: 200 }}
         image={m.Poster}
         alt={m.Title}
       />

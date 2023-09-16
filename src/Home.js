@@ -40,7 +40,7 @@ const Home = () => {
     {textAlign:"center",
     display:"block"}
    }
-  // className={Mode?"black":"white#"}
+  className={Mode?"black":"white#"}
    
    
    

@@ -2,7 +2,7 @@ import React from 'react';
 import { UseGlobalContext } from './context';
 import { NavLink, useParams } from 'react-router-dom';
 import { useState,useEffect } from 'react';
-import { Box ,Typography,Button} from '@mui/material';
+import { Box ,Typography,Button, Grid} from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -86,96 +86,69 @@ if(isloading){
 
   return (
    <>
+
+   <div style={{marginBottom:"5px"}} >
   <NavLink  to='/'  ><Button style={Mode?{backgroundColor:"black",color:"white"}:{backgroundColor:"#fdf5e6"}}  sx={
       {
        
         color:"black"
       }
     }>{<ArrowBackIcon/> }back</Button></NavLink>
+   </div>
+ <div className={Mode?"black":"white"}  style={{width:"100vw",height:"100vh"}}>
+  <Grid container   sx={{display:"flex",justifyContent:"center",alignItems:"center" }}  >
+   <Grid item  className={Mode?"black":"white"} sx={{padding:"10px"}}   >
+     <img src={movie.Poster} alt="" />
+     </Grid> 
 
-   <div   className={Mode?"black":"white"}  style={{height:"100vh" ,margin:"4px",display:"flex" , justifyContent:"center",alignItems:"center"}}>
-   <Box  className={Mode?"black":"white"}  sm={12} sx={{width:"80vw",display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",padding:"4px"}}>
-   <Card  sx={{display:"flex",justifyContent:"space-between",padding:"4px"}} >
-      <Box sx={{justifyContent:"space-between"}}>
-      
-        <CardContent sx={{ flex: '1 0 auto'}}>
-          <Typography  component="div" variant="h5" sx={
-            {
-              
-              fontFamily: 'Poppins'
-            }
-          }>
-            {movie.Title}
+    
+     <Grid item className={Mode?"black":"white"}  width = "60%"sx={{textAlign:"justify",margin:"20px",padding:"20px", }}>
+  
+       <Typography  className={Mode?"black":"white"}   variant='h3'>
+            {movie.Title}   
           </Typography>
           <br/>
+          
          
          
           <Typography    component="div" sx={{ fontFamily: 'Poppins'}}>
-           Type: {movie.Type}
-         
+          <b>Type</b>: {movie.Type}    ||   <b>Genre</b> : {movie.Genre}
+          
           </Typography>
-          <br/>
+         
           <Typography    component="div" sx={{ fontFamily: 'Poppins'}}>
-          Genre: {movie.Genre}
+          <b>Released</b> : {movie.Released} ||  <b>imdbRating</b>: {movie.imdbRating}
        
           </Typography>
-          <br />
+         
           <Typography  className='mobile' variant='subtitle1' component="div" sx={{ fontFamily: 'Poppins'}}>
-           ACTORS: {movie.Actors}
+          <b>Actors</b>: {movie.Actors}
          
-          </Typography>
-          <br className='mobile'/>
-          <Typography component="div" sx={{ fontFamily: 'Poppins'}}>
-           Year: {movie.Year}
-          </Typography>
-          <br />
+         </Typography>
          
-          <Typography  component="div" sx={{ fontFamily: 'Poppins'}}>
-          imdbRating: {movie.imdbRating}
-          </Typography>
-          <br />
-          <Typography  component="div" sx={{ fontFamily: 'Poppins'}}>
-          Awards: {movie.Awards}
-          </Typography>
-          <br />
-          <Typography  component="div" sx={{ fontFamily: 'Poppins'}}>
-          Released: {movie.Released}
-          </Typography>
-          <br />
-          <Typography className="mobile" variant='subtitle2'  component="div" sx={{ fontFamily: 'Poppins'}}>
-          <b >Plot</b>: {movie.Plot}
-          </Typography>
-          <br />
           
-          </CardContent>
+          <Typography  component="div" sx={{ fontFamily: 'Poppins'}}>
+          <b>Awards</b>: {movie.Awards}
+          </Typography>
          
-          </Box>
+       
+       
         
+          <Typography   variant='subtitle1'  component="div">
+          <b >Plot:</b> {movie.Plot}
+          </Typography>
+         
           
-          <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image={movie.Poster}
-        alt={movie.Title}
-      />
-      
-
-          </Card>
-
-
-   </Box>
+        
+        
+   </Grid>
+  
 
   
           
+   </Grid>
    </div>
-  
-  
-   
-
-
-   
-   </>
-   
+  </>
   )
  
 }
