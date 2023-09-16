@@ -46,7 +46,7 @@ const Movies = ({mode}) => {
       {movie.map((m)=>{
 
         let movieName = m.Title.substring(0,20)
-        if(m.Title.length>20){
+        if(m.Title.length>15){
           movieName = m.Title.substring(0,20) + "..."
         }
         if(m.Poster === 'N/A'){
@@ -65,7 +65,7 @@ const Movies = ({mode}) => {
       <Box sx={{justifyContent:"space-between"}}>
       
         <CardContent sx={{ flex: '1 0 auto'}}>
-          <Typography  component="div" variant="h5" sx={
+          <Typography  component="div" variant="h6" sx={
             {
               
               fontFamily: 'Poppins'
