@@ -67,6 +67,11 @@ if(isloading){
       }
     }>{<ArrowBackIcon/> }back</Button></div>
 
+<div style={{height:"90vh" ,margin:"4px",display:"flex" , justifyContent:"center",alignItems:"center",backgroundColor:"#fdf5e6"}}>
+   <Box sx={{width:"60vw",display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",padding:"4px"}}>
+   <Typography sx={{textAlign:"center",mt:"20px"}} variant='h6'>LOADING ...</Typography>
+    
+    </Box></div>
 
     </div>
     
