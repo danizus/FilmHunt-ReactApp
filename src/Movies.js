@@ -42,7 +42,7 @@ const Movies = ({mode}) => {
       } }
     
     >
-    <Grid container   spacing={4} sx={{position:"relative",padding:"40px",width:"80%"}} >
+    <Grid container sm={12}  spacing={4} sx={{position:"relative",padding:"40px",width:"100%"}} >
       {movie.map((m)=>{
 
         let movieName = m.Title.substring(0,20)
