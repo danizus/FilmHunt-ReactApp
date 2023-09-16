@@ -71,7 +71,7 @@ if(isloading){
       }
     } onClick={handleBack}>{<ArrowBackIcon/> }back</Button></NavLink>
 
-<div className={Mode?"black":"white"} style={{height:"90vh" ,margin:"4px",display:"flex" , justifyContent:"center",alignItems:"center"}}>
+<div className={Mode?"black":"white"} style={{height:"100vh" ,margin:"4px",display:"flex" , justifyContent:"center",alignItems:"center"}}>
    
    <img src={image} alt="" />
     
