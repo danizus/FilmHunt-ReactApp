@@ -45,7 +45,7 @@ const Home = () => {
    
    
    
-   >FilmHuntttt</Typography>
+   >FilmHunt</Typography>
 
   
  
