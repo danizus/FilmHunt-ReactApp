@@ -30,3 +30,46 @@ code {
 }
 
 
+
+
+.body {
+  
+  font-family: 'Poppins', sans-serif;
+  
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.movie-poster {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.movie-poster img {
+  max-width: 100%;
+  height: auto;
+}
+
+.movie-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.movie-description {
+  font-size: 1rem;
+  margin: 10px 0;
+  text-align: justify;
+}
+
+.release-date {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}

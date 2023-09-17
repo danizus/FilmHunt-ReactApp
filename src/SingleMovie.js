@@ -7,7 +7,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import image from "./Magnify-1s-200px.gif"
+import image from "./Magnify-1s-200px.gif";
+
 
 
 const SingleMovie = () => {
@@ -94,60 +95,26 @@ if(isloading){
         color:"black"
       }
     }>{<ArrowBackIcon/> }back</Button></NavLink>
+   
+   
    </div>
- <div className={Mode?"black":"white"}  style={{width:"100vw",height:"100vh"}}>
-  <Grid container   sx={{display:"flex",justifyContent:"center",alignItems:"center" }}  >
-   <Grid item  className={Mode?"black":"white"} sx={{padding:"10px"}}   >
-     <img src={movie.Poster} alt="" />
-     </Grid> 
+<div className='body' style={Mode?{backgroundColor:"black"}:{backgroundColor:"#fdf5e6"}}>
+   <div className="movie-poster" style={{backgroundColor:"#7c4848",color:"white"}}>
+        <img src={movie.Poster} alt="Movie Poster"/>
+        <h1 className="movie-title">{movie.Title}</h1>
+        <p className="movie-description"><b>Plot: </b>{movie.Plot}.</p>
+        <p className="release-date"> Released on: {movie.Released}</p>
+    </div>
 
-    
-     <Grid item className={Mode?"black":"white"}  width = "60%"sx={{textAlign:"justify",margin:"20px",padding:"20px", }}>
-  
-       <Typography  className={Mode?"black":"white"}   variant='h3'>
-            {movie.Title}   
-          </Typography>
-          <br/>
-          
-         
-         
-          <Typography    component="div" sx={{ fontFamily: 'Poppins'}}>
-          <b>Type</b>: {movie.Type}    ||   <b>Genre</b> : {movie.Genre}
-          
-          </Typography>
-         
-          <Typography    component="div" sx={{ fontFamily: 'Poppins'}}>
-          <b>Released</b> : {movie.Released} ||  <b>imdbRating</b>: {movie.imdbRating}
-       
-          </Typography>
-         
-          <Typography  className='mobile' variant='subtitle1' component="div" sx={{ fontFamily: 'Poppins'}}>
-          <b>Actors</b>: {movie.Actors}
-         
-         </Typography>
-         
-          
-          <Typography  component="div" sx={{ fontFamily: 'Poppins'}}>
-          <b>Awards</b>: {movie.Awards}
-          </Typography>
-         
-       
-       
-        
-          <Typography   variant='subtitle1'  component="div">
-          <b >Plot:</b> {movie.Plot}
-          </Typography>
-         
-          
-        
-        
-   </Grid>
-  
+    </div>
 
-  
-          
-   </Grid>
-   </div>
+
+
+
+
+
+
+ 
   </>
   )
  
