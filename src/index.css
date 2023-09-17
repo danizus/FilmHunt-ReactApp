@@ -35,7 +35,7 @@ code {
 .body {
   
   font-family: 'Poppins', sans-serif;
-  
+ 
   margin: 0;
   display: flex;
   justify-content: center;
@@ -46,9 +46,9 @@ code {
 .movie-poster {
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  max-width: 250px;
+  max-width: 300px;
   max-height:max-content;
-
+margin-top: auto;
   text-align: center;
   padding: 20px;
   border-radius: 5px;

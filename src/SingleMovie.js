@@ -98,11 +98,13 @@ if(isloading){
    
    
    </div>
-<div className='body' style={Mode?{backgroundColor:"black"}:{backgroundColor:"#fdf5e6"}}>
+<div className='body'  style={Mode?{backgroundColor:"black"}:{backgroundColor:"#fdf5e6"}}>
    <div className="movie-poster" style={{backgroundColor:"#ffe4c4",color:"black"}}>
         <img src={movie.Poster} alt="Movie Poster"/>
         <h1 className="movie-title">{movie.Title}</h1>
         <p className="movie-description"><b>Plot: </b>{movie.Plot}.</p>
+        
+        <p className="movie-description"><b>Actors: </b>{movie.Actors}.</p>
         <p className="release-date"> Released on: {movie.Released}</p>
     </div>
 
