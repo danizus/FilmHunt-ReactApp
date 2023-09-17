@@ -87,6 +87,7 @@ if(isloading){
 
   return (
    <>
+    
 
    <div style={{marginBottom:"5px"}} >
   <NavLink  to='/'  ><Button style={Mode?{backgroundColor:"black",color:"white"}:{backgroundColor:"#fdf5e6"}}  sx={
@@ -98,6 +99,7 @@ if(isloading){
    
    
    </div>
+  
 <div className='body'  style={Mode?{backgroundColor:"black"}:{backgroundColor:"#fdf5e6"}}>
    <div className="movie-poster" style={{backgroundColor:"#ffe4c4",color:"black"}}>
         <img src={movie.Poster} alt="Movie Poster"/>
@@ -110,7 +112,7 @@ if(isloading){
 
     </div>
 
-
+    
 
 
 
