@@ -99,7 +99,7 @@ if(isloading){
    
    </div>
 <div className='body' style={Mode?{backgroundColor:"black"}:{backgroundColor:"#fdf5e6"}}>
-   <div className="movie-poster" style={{backgroundColor:"#7c4848",color:"white"}}>
+   <div className="movie-poster" style={{backgroundColor:"#add8e6",color:"black"}}>
         <img src={movie.Poster} alt="Movie Poster"/>
         <h1 className="movie-title">{movie.Title}</h1>
         <p className="movie-description"><b>Plot: </b>{movie.Plot}.</p>
